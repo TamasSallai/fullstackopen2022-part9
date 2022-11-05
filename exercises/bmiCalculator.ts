@@ -1,4 +1,4 @@
-const calculateBmi = (height: number, weight: number): string => {
+export const calculateBmi = (height: number, weight: number): string => {
   const heightInMeter = height / 100
   const bmi = weight / (heightInMeter * heightInMeter)
   if (bmi < 18.5) {
@@ -7,7 +7,7 @@ const calculateBmi = (height: number, weight: number): string => {
     return 'Normal weight'
   } else if (bmi < 29.9) {
     return 'Overweight'
-  } else if (bmi > 30) {
+  } else {
     return 'Obese'
   }
 }
