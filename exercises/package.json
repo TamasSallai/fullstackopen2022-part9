@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ts-node": "ts-node",
+    "calculateBmi": "ts-node -- bmiCalculator.ts",
     "calculateExercises": "ts-node -- exerciseCalculator.ts"
   },
   "keywords": [],
