@@ -1,1 +1,13 @@
 GET http://localhost:3001/api/patients
+###
+
+POST http://localhost:3001/api/patients
+Content-Type: application/json
+
+{
+    "name": "Tamas Sallai",
+    "dateOfBirth": "1996-01-17",
+    "ssn": "123456789",
+    "gender": "male",
+    "occupation": "Programmer"
+}
