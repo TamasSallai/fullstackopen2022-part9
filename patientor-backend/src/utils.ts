@@ -1,4 +1,4 @@
-import { Gender, NewPatientEntry } from './type';
+import { Entry, Gender, NewPatientEntry } from './type';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const toNewPatientEntry = (object: any): NewPatientEntry => {
@@ -8,6 +8,7 @@ const toNewPatientEntry = (object: any): NewPatientEntry => {
         ssn: parseString('ssn', object.ssn),
         gender: parseGender(object.gender),
         occupation: parseString('occupation', object.occupation),
+        entries: object.entries as Entry[],
     };
     return newEntry;
 };

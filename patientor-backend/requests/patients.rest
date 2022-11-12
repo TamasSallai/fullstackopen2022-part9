@@ -1,6 +1,8 @@
 GET http://localhost:3001/api/patients
 ###
 
+GET http://localhost:3001/api/patients/d2773336-f723-11e9-8f0b-362b9e155667
+###
 POST http://localhost:3001/api/patients
 Content-Type: application/json
 
@@ -9,5 +11,6 @@ Content-Type: application/json
     "dateOfBirth": "1996-01-17",
     "ssn": "123456789",
     "gender": "male",
-    "occupation": "Programmer"
+    "occupation": "Programmer",
+    "entries:": []
 }

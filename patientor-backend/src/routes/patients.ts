@@ -1,6 +1,7 @@
 import express from 'express';
 import {
-    getNonSensitivePatiensEntries,
+    getPublicPatients,
+    getPatientById,
     addPatient,
 } from '../services/patients';
 import toNewPatientEntry from '../utils';
@@ -8,7 +9,17 @@ import toNewPatientEntry from '../utils';
 const router = express.Router();
 
 router.get('/', (_req, res) => {
-    res.send(getNonSensitivePatiensEntries());
+    res.send(getPublicPatients());
+});
+
+router.get('/:id', (req, res) => {
+    const patient = getPatientById(req.params.id);
+    if (!patient) {
+        return res.status(404).send({
+            error: `Can't find patient with the id: ${req.params.id}`,
+        });
+    }
+    return res.send(patient);
 });
 
 router.post('/', (req, res) => {
