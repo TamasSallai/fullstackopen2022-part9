@@ -2,6 +2,10 @@ import patients from '../../data/patients';
 import { v4 as uuidv4 } from 'uuid';
 import { NewPatientEntry, PublicPatient, Patient } from '../type';
 
+const getPatients = (): Array<Patient> => {
+    return patients;
+};
+
 const getPublicPatients = (): Array<PublicPatient> => {
     return patients.map(({ id, name, dateOfBirth, gender, occupation }) => ({
         id,
@@ -25,4 +29,4 @@ const addPatient = (newPatient: NewPatientEntry): Patient => {
     return patient;
 };
 
-export { getPublicPatients, getPatientById, addPatient };
+export { getPatients, getPublicPatients, getPatientById, addPatient };
